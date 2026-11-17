@@ -28,7 +28,7 @@ export const proyectos: Proyecto[] = [
       'Caja, recaudación y reportes para la municipalidad',
       'Preparado para varios municipios con datos separados',
     ],
-    tecnologias: ['React', 'NestJS', 'PostgreSQL', 'Redis', 'Claude'],
+    tecnologias: ['React', 'NestJS', 'PostgreSQL', 'Redis'],
     imagen: {
       src: '/proyectos/sistema-municipal.jpg',
       alt: 'Pantalla de inicio del portal del ciudadano del sistema municipal de Pilar',
