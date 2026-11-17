@@ -1,0 +1,6 @@
+// Publicación en Cloudflare Workers como sitio estático (la carpeta que genera `npm run build`).
+{
+  "name": "cgsm-innova-web",
+  "compatibility_date": "2026-10-01",
+  "assets": { "directory": "./dist" }
+}
