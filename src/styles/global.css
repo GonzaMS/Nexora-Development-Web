@@ -1,0 +1,76 @@
+@import 'tailwindcss';
+@import '@fontsource-variable/space-grotesk';
+@import '@fontsource-variable/public-sans';
+
+/* Colores y tipografías de la marca (ver "CGSM Innova - marca/LEEME.md"). */
+@theme {
+  --color-petroleo: #0e2a2f;
+  --color-petroleo-2: #163a40;
+  --color-verde: #0f8a74;
+  --color-verde-claro: #5fd3b8;
+  --color-gris: #4f6b66;
+  --color-hueso: #f4f6f5;
+  --color-linea: #d5dedb;
+
+  --font-display: 'Space Grotesk Variable', 'Space Grotesk', system-ui, sans-serif;
+  --font-sans: 'Public Sans Variable', 'Public Sans', system-ui, sans-serif;
+}
+
+html {
+  scroll-behavior: smooth;
+  scroll-padding-top: 5rem;
+}
+
+body {
+  background: var(--color-hueso);
+  color: var(--color-petroleo);
+  font-family: var(--font-sans);
+  -webkit-font-smoothing: antialiased;
+}
+
+:focus-visible {
+  outline: 3px solid var(--color-verde);
+  outline-offset: 3px;
+  border-radius: 4px;
+}
+
+.oscuro :focus-visible {
+  outline-color: var(--color-verde-claro);
+}
+
+/* El momento del inicio: las llaves se cierran alrededor del título, como un traje a medida. */
+@media (prefers-reduced-motion: no-preference) {
+  .llave-izq {
+    animation: cerrar-izq 900ms cubic-bezier(0.2, 0.8, 0.2, 1) 150ms both;
+  }
+  .llave-der {
+    animation: cerrar-der 900ms cubic-bezier(0.2, 0.8, 0.2, 1) 150ms both;
+  }
+  .punto {
+    animation: aparecer 400ms ease-out 950ms both;
+  }
+}
+
+@keyframes cerrar-izq {
+  from {
+    transform: translateX(-3rem);
+    opacity: 0;
+  }
+}
+@keyframes cerrar-der {
+  from {
+    transform: translateX(3rem);
+    opacity: 0;
+  }
+}
+@keyframes aparecer {
+  from {
+    transform: scale(0);
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  html {
+    scroll-behavior: auto;
+  }
+}

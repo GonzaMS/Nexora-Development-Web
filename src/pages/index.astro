@@ -1,0 +1,228 @@
+---
+import Base from '../layouts/Base.astro';
+import Logo from '../components/Logo.astro';
+import { empresa, equipo } from '../data/empresa';
+import { proyectos } from '../data/proyectos';
+
+const [destacado, ...otros] = proyectos;
+const whatsapp = `https://wa.me/${empresa.whatsapp}?text=${encodeURIComponent('Hola, quiero contarles sobre un proyecto.')}`;
+
+const servicios = [
+  {
+    titulo: 'Sistemas web a medida',
+    texto: 'Portales, paneles de gestión y sistemas internos pensados para cómo trabaja tu organización, no al revés. Funcionan en la computadora y en el celular.',
+  },
+  {
+    titulo: 'Pagos e integraciones',
+    texto: 'Conectamos tu sistema con pasarelas de pago, WhatsApp, correo y los servicios que ya usás, para que los datos no se carguen dos veces.',
+  },
+  {
+    titulo: 'Asistentes con inteligencia artificial',
+    texto: 'Asistentes que responden preguntas con la información de tu organización y pasan la charla a una persona cuando hace falta.',
+  },
+  {
+    titulo: 'Mantenimiento y soporte',
+    texto: 'Después de entregar seguimos: copias de seguridad, vigilancia de errores, mejoras y ayuda a quienes usan el sistema todos los días.',
+  },
+];
+
+const pasos = [
+  {
+    titulo: 'Te escuchamos',
+    texto: 'Nos sentamos con quienes van a usar el sistema y entendemos el problema antes de proponer nada.',
+  },
+  {
+    titulo: 'Te mostramos una demo',
+    texto: 'En pocas semanas ves una versión que funciona, con tus datos de ejemplo, y decidís con algo concreto en la mano.',
+  },
+  {
+    titulo: 'Construimos por etapas',
+    texto: 'Entregamos en partes que ya se pueden usar, y ajustamos con lo que va surgiendo en el día a día.',
+  },
+  {
+    titulo: 'Te acompañamos',
+    texto: 'Capacitamos a tu equipo, ponemos el sistema en marcha y quedamos para el soporte y las mejoras.',
+  },
+];
+---
+
+<Base
+  titulo="CGSM Innova — Software a medida"
+  descripcion="Desarrollamos sistemas web, integraciones y asistentes con inteligencia artificial hechos a la medida de cada organización. Paraguay."
+>
+  <header class="sticky top-0 z-40 border-b border-linea/70 bg-hueso/90 backdrop-blur">
+    <div class="mx-auto flex max-w-6xl items-center justify-between gap-6 px-4 py-3 sm:px-6">
+      <a href="/" aria-label="CGSM Innova, inicio"><Logo /></a>
+      <nav aria-label="Principal" class="hidden items-center gap-7 text-[0.95rem] text-gris md:flex">
+        <a class="hover:text-petroleo" href="#proyectos">Proyectos</a>
+        <a class="hover:text-petroleo" href="#servicios">Qué hacemos</a>
+        <a class="hover:text-petroleo" href="#como-trabajamos">Cómo trabajamos</a>
+        <a class="hover:text-petroleo" href="#equipo">Equipo</a>
+      </nav>
+      <a href="#contacto" class="rounded-full bg-petroleo px-4 py-2 text-sm font-semibold text-hueso hover:bg-petroleo-2">
+        Escribinos
+      </a>
+    </div>
+  </header>
+
+  <main id="contenido">
+    <!-- Inicio: el título envuelto en las llaves de la marca. -->
+    <section class="mx-auto max-w-6xl px-4 pt-16 pb-20 sm:px-6 sm:pt-24 sm:pb-28">
+      <div class="grid grid-cols-[1.25rem_1fr_1.25rem] items-stretch gap-3 sm:grid-cols-[3rem_1fr_3rem] sm:gap-6 lg:grid-cols-[4.5rem_1fr_4.5rem]">
+        <svg class="llave-izq h-full w-full" viewBox="10 10 18 44" preserveAspectRatio="none" aria-hidden="true">
+          <path d="M26 12c-6 0-8 2.5-8 7v7c0 3.5-2 5.5-6 6 4 .5 6 2.5 6 6v7c0 4.5 2 7 8 7" fill="none" stroke="#0F8A74" stroke-width="5" vector-effect="non-scaling-stroke" stroke-linecap="round" stroke-linejoin="round"></path>
+        </svg>
+        <div class="py-4 sm:py-8">
+          <h1 class="font-display text-[2.4rem] leading-[1.02] font-bold tracking-[-0.03em] text-balance sm:text-6xl lg:text-[5.25rem]">
+            Hacemos el software que tu organización necesita, no uno parecido<span class="punto ml-1 inline-block size-[0.17em] rounded-full bg-verde align-baseline"></span>
+          </h1>
+          <p class="mt-7 max-w-2xl text-lg leading-relaxed text-gris sm:text-xl">
+            Somos un equipo paraguayo de desarrollo. Escuchamos cómo trabajás y construimos sistemas web, integraciones y asistentes con inteligencia artificial que encajan en eso.
+          </p>
+          <div class="mt-9 flex flex-wrap items-center gap-x-6 gap-y-4">
+            <a href="#contacto" class="rounded-full bg-verde px-6 py-3 font-semibold text-white hover:bg-[#0c7563]">Contanos tu proyecto</a>
+            <a href="#proyectos" class="font-semibold text-petroleo underline decoration-verde decoration-2 underline-offset-[6px] hover:decoration-petroleo">Ver lo que hicimos</a>
+          </div>
+        </div>
+        <svg class="llave-der h-full w-full" viewBox="36 10 18 44" preserveAspectRatio="none" aria-hidden="true">
+          <path d="M38 12c6 0 8 2.5 8 7v7c0 3.5 2 5.5 6 6-4 .5-6 2.5-6 6v7c0 4.5-2 7-8 7" fill="none" stroke="#0E2A2F" stroke-width="5" vector-effect="non-scaling-stroke" stroke-linecap="round" stroke-linejoin="round"></path>
+        </svg>
+      </div>
+    </section>
+
+    <!-- Proyectos -->
+    <section id="proyectos" class="oscuro bg-petroleo text-hueso">
+      <div class="mx-auto max-w-6xl px-4 py-20 sm:px-6 sm:py-28">
+        <h2 class="font-display text-4xl font-bold tracking-tight sm:text-5xl">Proyectos</h2>
+        <p class="mt-4 max-w-xl text-lg text-hueso/75">Sistemas que ya están en uso o en camino, con la gente que los usa todos los días.</p>
+
+        {destacado && (
+          <article class="mt-14 grid gap-10 lg:grid-cols-[1.1fr_1fr] lg:gap-14">
+            <div>
+              <p class="text-verde-claro">{destacado.cliente}</p>
+              <h3 class="mt-2 font-display text-3xl font-bold tracking-tight sm:text-4xl">{destacado.nombre}</h3>
+              <p class="mt-1 text-sm text-hueso/60">{destacado.estado}, {destacado.anio}</p>
+              <p class="mt-6 max-w-[62ch] text-lg leading-relaxed text-hueso/85">{destacado.resumen}</p>
+              <ul class="mt-7 grid gap-x-8 gap-y-3 sm:grid-cols-2">
+                {destacado.queHace.map((item) => (
+                  <li class="flex gap-3 leading-snug text-hueso/90">
+                    <span class="mt-[0.45em] size-1.5 shrink-0 rounded-full bg-verde-claro" aria-hidden="true"></span>
+                    {item}
+                  </li>
+                ))}
+              </ul>
+              <p class="mt-8 text-sm text-hueso/60">Hecho con {destacado.tecnologias.join(', ')}.</p>
+              {destacado.enlace && (
+                <a href={destacado.enlace.url} target="_blank" rel="noopener" class="mt-8 inline-block rounded-full bg-verde-claro px-6 py-3 font-semibold text-petroleo hover:bg-white">
+                  {destacado.enlace.texto}
+                </a>
+              )}
+            </div>
+            {destacado.imagen && (
+              <figure class="self-start overflow-hidden rounded-xl border border-white/15 bg-petroleo-2 shadow-[0_30px_80px_-20px_rgba(0,0,0,0.55)]">
+                <div class="flex gap-1.5 border-b border-white/10 px-4 py-3" aria-hidden="true">
+                  <span class="size-2.5 rounded-full bg-white/20"></span>
+                  <span class="size-2.5 rounded-full bg-white/20"></span>
+                  <span class="size-2.5 rounded-full bg-white/20"></span>
+                </div>
+                <img src={destacado.imagen.src} alt={destacado.imagen.alt} width="1280" height="800" loading="lazy" class="block h-auto w-full" />
+              </figure>
+            )}
+          </article>
+        )}
+
+        {otros.length > 0 && (
+          <ul class="mt-20 grid gap-10 border-t border-white/15 pt-12 md:grid-cols-2">
+            {otros.map((p) => (
+              <li>
+                <p class="text-sm text-verde-claro">{p.cliente}, {p.anio}</p>
+                <h3 class="mt-1 font-display text-2xl font-bold">{p.nombre}</h3>
+                <p class="mt-3 leading-relaxed text-hueso/80">{p.resumen}</p>
+                {p.enlace && <a href={p.enlace.url} target="_blank" rel="noopener" class="mt-4 inline-block font-semibold text-verde-claro underline underline-offset-4">{p.enlace.texto}</a>}
+              </li>
+            ))}
+          </ul>
+        )}
+      </div>
+    </section>
+
+    <!-- Qué hacemos -->
+    <section id="servicios" class="mx-auto max-w-6xl px-4 py-20 sm:px-6 sm:py-28">
+      <div class="grid gap-12 lg:grid-cols-[1fr_2fr]">
+        <div>
+          <h2 class="font-display text-4xl font-bold tracking-tight sm:text-5xl">Qué hacemos</h2>
+          <p class="mt-4 max-w-sm text-lg text-gris">Para empresas, instituciones y municipios. Si tu problema se resuelve con software, lo charlamos.</p>
+        </div>
+        <dl class="grid gap-x-12 gap-y-10 sm:grid-cols-2">
+          {servicios.map((s) => (
+            <div class="border-t-2 border-petroleo pt-5">
+              <dt class="font-display text-xl font-bold">{s.titulo}</dt>
+              <dd class="mt-3 leading-relaxed text-gris">{s.texto}</dd>
+            </div>
+          ))}
+        </dl>
+      </div>
+    </section>
+
+    <!-- Cómo trabajamos: es una secuencia real, por eso va numerada. -->
+    <section id="como-trabajamos" class="border-y border-linea bg-white">
+      <div class="mx-auto max-w-6xl px-4 py-20 sm:px-6 sm:py-28">
+        <h2 class="font-display text-4xl font-bold tracking-tight sm:text-5xl">Cómo trabajamos</h2>
+        <ol class="mt-14 grid gap-10 md:grid-cols-4 md:gap-8">
+          {pasos.map((p, i) => (
+            <li class="relative">
+              <span class="font-display text-5xl font-bold text-verde" aria-hidden="true">{i + 1}</span>
+              <h3 class="mt-3 font-display text-xl font-bold">{p.titulo}</h3>
+              <p class="mt-2 leading-relaxed text-gris">{p.texto}</p>
+            </li>
+          ))}
+        </ol>
+      </div>
+    </section>
+
+    <!-- Equipo -->
+    <section id="equipo" class="mx-auto max-w-6xl px-4 py-20 sm:px-6 sm:py-28">
+      <h2 class="font-display text-4xl font-bold tracking-tight sm:text-5xl">Equipo</h2>
+      <p class="mt-4 max-w-xl text-lg text-gris">Las personas que van a atender tu proyecto, de la primera reunión al soporte.</p>
+      <ul class="mt-12 grid gap-6 sm:grid-cols-2 lg:grid-cols-4">
+        {equipo.map((persona) => {
+          const iniciales = persona.nombre.split(' ').map((n) => n[0]).join('').slice(0, 2);
+          return (
+            <li class="flex items-center gap-4">
+              <span class="grid size-14 shrink-0 place-items-center rounded-full bg-petroleo font-display text-lg font-bold text-verde-claro" aria-hidden="true">{iniciales}</span>
+              <span>
+                <span class="block font-semibold">{persona.nombre}</span>
+                {persona.rol && <span class="block text-sm text-gris">{persona.rol}</span>}
+              </span>
+            </li>
+          );
+        })}
+      </ul>
+    </section>
+
+    <!-- Contacto -->
+    <section id="contacto" class="oscuro bg-petroleo text-hueso">
+      <div class="mx-auto grid max-w-6xl gap-10 px-4 py-20 sm:px-6 sm:py-24 lg:grid-cols-[1.4fr_1fr] lg:items-end">
+        <div>
+          <h2 class="font-display text-4xl font-bold tracking-tight text-balance sm:text-6xl">Contanos qué necesitás</h2>
+          <p class="mt-5 max-w-xl text-lg text-hueso/80">Respondemos en el día. La primera charla no tiene costo y no te compromete a nada.</p>
+        </div>
+        <div class="flex flex-col gap-4">
+          <a href={whatsapp} target="_blank" rel="noopener" class="rounded-full bg-verde-claro px-6 py-4 text-center font-semibold text-petroleo hover:bg-white">
+            Escribir por WhatsApp
+          </a>
+          <a href={`mailto:${empresa.email}`} class="rounded-full border border-hueso/30 px-6 py-4 text-center font-semibold hover:border-verde-claro hover:text-verde-claro">
+            {empresa.email}
+          </a>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer class="oscuro bg-petroleo text-hueso">
+    <div class="mx-auto flex max-w-6xl flex-wrap items-center justify-between gap-4 border-t border-white/10 px-4 py-8 text-sm text-hueso/60 sm:px-6">
+      <Logo oscuro />
+      <p>{empresa.bajada}. {empresa.ciudad}, {new Date().getFullYear()}.</p>
+    </div>
+  </footer>
+</Base>
