@@ -12,5 +12,5 @@ export const empresa = {
 
 export const equipo: { nombre: string; rol?: string }[] = [
   { nombre: 'Cristhian Marecos', rol: 'Ingeniero, fundador' },
-  { nombre: 'Roberto Amarilla', rol: 'Cofundador' },
+  { nombre: 'Roberto Amarilla', rol: 'Analista de sistemas, cofundador' },
 ];
