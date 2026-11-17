@@ -7,6 +7,7 @@ interface Props {
 const { oscuro = false, class: clase = '' } = Astro.props;
 const fondo = oscuro ? '#1C2740' : '#121A2B';
 const texto = oscuro ? '#F5F7FA' : '#121A2B';
+const acento = oscuro ? '#6EA8FF' : '#2F54EB';
 // Cada instancia necesita su propio id de degradé (el logo aparece en el encabezado y en el pie).
 const id = `nx-${oscuro ? 'oscuro' : 'claro'}`;
 ---
@@ -25,5 +26,8 @@ const id = `nx-${oscuro ? 'oscuro' : 'claro'}`;
       <path d="M20 20l24 24" stroke={`url(#${id})`}></path>
     </g>
   </svg>
-  <span class="font-display text-xl leading-none font-bold tracking-[0.12em]" style={`color:${texto}`}>NEXORA</span>
+  <span class="font-display leading-none">
+    <span class="block text-xl font-bold tracking-[0.12em]" style={`color:${texto}`}>NEXORA</span>
+    <span class="mt-1 block text-[0.6rem] font-medium tracking-[0.42em]" style={`color:${acento}`}>SOLUTIONS</span>
+  </span>
 </span>
