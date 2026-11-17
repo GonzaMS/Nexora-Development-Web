@@ -1,10 +1,10 @@
 // Datos de la empresa que aparecen en toda la página.
 // COMPLETAR: el correo es de ejemplo, reemplazarlo antes de publicar.
 export const empresa = {
-  nombre: 'CGSM Innova',
-  bajada: 'Software a medida',
+  nombre: 'Nexora',
+  bajada: 'Next generation technology',
   ciudad: 'Paraguay',
-  email: 'contacto@cgsminnova.com.py',
+  email: 'contacto@nexora.com.py',
   // Número en formato internacional, sin "+" ni espacios (para el enlace de WhatsApp).
   whatsapp: '595971211597',
   whatsappVisible: '+595 971 211 597',

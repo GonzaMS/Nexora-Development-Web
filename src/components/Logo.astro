@@ -5,17 +5,25 @@ interface Props {
   class?: string;
 }
 const { oscuro = false, class: clase = '' } = Astro.props;
-const acento = oscuro ? '#5FD3B8' : '#0F8A74';
-const texto = oscuro ? '#F4F6F5' : '#0E2A2F';
+const fondo = oscuro ? '#1C2740' : '#121A2B';
+const texto = oscuro ? '#F5F7FA' : '#121A2B';
+// Cada instancia necesita su propio id de degradé (el logo aparece en el encabezado y en el pie).
+const id = `nx-${oscuro ? 'oscuro' : 'claro'}`;
 ---
 
 <span class={`inline-flex items-center gap-2.5 ${clase}`}>
-  <svg viewBox="8 8 48 48" class="size-9 shrink-0" aria-hidden="true">
-    <path d="M26 12c-6 0-8 2.5-8 7v7c0 3.5-2 5.5-6 6 4 .5 6 2.5 6 6v7c0 4.5 2 7 8 7" fill="none" stroke={acento} stroke-width="6" stroke-linecap="round" stroke-linejoin="round"></path>
-    <path d="M38 12c6 0 8 2.5 8 7v7c0 3.5 2 5.5 6 6-4 .5-6 2.5-6 6v7c0 4.5-2 7-8 7" fill="none" stroke={texto} stroke-width="6" stroke-linecap="round" stroke-linejoin="round"></path>
-    <circle cx="32" cy="32" r="4.5" fill={acento}></circle>
+  <svg viewBox="0 0 64 64" class="size-9 shrink-0" aria-hidden="true">
+    <defs>
+      <linearGradient id={id} x1="20" y1="20" x2="44" y2="44" gradientUnits="userSpaceOnUse">
+        <stop offset="0" stop-color="#2F54EB"></stop>
+        <stop offset="1" stop-color="#6EA8FF"></stop>
+      </linearGradient>
+    </defs>
+    <rect width="64" height="64" rx="16" fill={fondo}></rect>
+    <g transform="translate(32 32) scale(.8) translate(-32 -32)" fill="none" stroke-width="8" stroke-linecap="round">
+      <path d="M20 44V20M44 44V20" stroke="#FFFFFF"></path>
+      <path d="M20 20l24 24" stroke={`url(#${id})`}></path>
+    </g>
   </svg>
-  <span class="font-display text-xl leading-none tracking-tight" style={`color:${texto}`}>
-    <b class="font-bold">CGSM</b> <span class="font-medium" style={`color:${acento}`}>Innova</span>
-  </span>
+  <span class="font-display text-xl leading-none font-bold tracking-[0.12em]" style={`color:${texto}`}>NEXORA</span>
 </span>
