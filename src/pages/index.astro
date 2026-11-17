@@ -210,6 +210,7 @@ const pasos = [
         <div class="flex flex-col gap-4">
           <a href={whatsapp} target="_blank" rel="noopener" class="rounded-full bg-verde-claro px-6 py-4 text-center font-semibold text-petroleo hover:bg-white">
             Escribir por WhatsApp
+            <span class="block text-sm font-normal">{empresa.whatsappVisible}</span>
           </a>
           <a href={`mailto:${empresa.email}`} class="rounded-full border border-hueso/30 px-6 py-4 text-center font-semibold hover:border-verde-claro hover:text-verde-claro">
             {empresa.email}
