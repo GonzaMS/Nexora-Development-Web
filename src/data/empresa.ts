@@ -7,8 +7,8 @@ export const empresa = {
   email: 'contacto@nexora.com.py',
   // WhatsApp de la empresa: número internacional sin "+" ni espacios (ej. '595981123456').
   // Vacío = la página no muestra el botón de WhatsApp.
-  whatsapp: '',
-  whatsappVisible: '',
+  whatsapp: '595981000000', // FALSO: reemplazar por el de la empresa
+  whatsappVisible: '+595 981 000 000',
 };
 
 export const equipo: { nombre: string; rol?: string }[] = [
