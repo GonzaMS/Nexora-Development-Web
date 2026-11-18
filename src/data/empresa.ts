@@ -1,7 +1,7 @@
 // Datos de la empresa que aparecen en toda la página.
 // COMPLETAR: el correo es de ejemplo, reemplazarlo antes de publicar.
 export const empresa = {
-  nombre: 'Nexora Solutions',
+  nombre: 'Nexora Development',
   bajada: 'Next generation technology',
   ciudad: 'Paraguay',
   email: 'contacto@nexora.com.py',
