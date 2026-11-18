@@ -5,6 +5,8 @@ import { empresa, equipo } from '../data/empresa';
 import { proyectos } from '../data/proyectos';
 
 const [destacado, ...otros] = proyectos;
+const whatsapp =
+  empresa.whatsapp && `https://wa.me/${empresa.whatsapp}?text=${encodeURIComponent('Hola, quiero contarles sobre un proyecto.')}`;
 
 const servicios = [
   {
@@ -216,7 +218,18 @@ const pasos = [
           <p class="mt-5 max-w-xl text-lg text-niebla/80">Respondemos en el día. La primera charla no tiene costo y no te compromete a nada.</p>
         </div>
         <div class="flex flex-col gap-4">
-          <a href={`mailto:${empresa.email}`} class="rounded-full bg-celeste px-6 py-4 text-center font-semibold text-medianoche hover:bg-white">
+          {whatsapp && (
+            <a href={whatsapp} target="_blank" rel="noopener" class="rounded-full bg-celeste px-6 py-4 text-center font-semibold text-medianoche hover:bg-white">
+              Escribir por WhatsApp
+              <span class="block text-sm font-normal">{empresa.whatsappVisible}</span>
+            </a>
+          )}
+          <a
+            href={`mailto:${empresa.email}`}
+            class={whatsapp
+              ? 'rounded-full border border-niebla/30 px-6 py-4 text-center font-semibold hover:border-celeste hover:text-celeste'
+              : 'rounded-full bg-celeste px-6 py-4 text-center font-semibold text-medianoche hover:bg-white'}
+          >
             Escribinos por correo
             <span class="block text-sm font-normal">{empresa.email}</span>
           </a>
