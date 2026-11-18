@@ -1,10 +1,12 @@
 ---
-// Logo de la marca. `oscuro` lo adapta para fondos oscuros.
+// Logo de la marca. `oscuro` lo adapta para fondos oscuros; `animado` dibuja la N trazo por trazo al cargar.
 interface Props {
   oscuro?: boolean;
+  animado?: boolean;
   class?: string;
 }
-const { oscuro = false, class: clase = '' } = Astro.props;
+const { oscuro = false, animado = false, class: clase = '' } = Astro.props;
+const trazo = (n: number) => (animado ? `trazo trazo-${n}` : undefined);
 const fondo = oscuro ? '#1C2740' : '#121A2B';
 const texto = oscuro ? '#F5F7FA' : '#121A2B';
 const acento = oscuro ? '#6EA8FF' : '#2F54EB';
@@ -22,8 +24,9 @@ const id = `nx-${oscuro ? 'oscuro' : 'claro'}`;
     </defs>
     <rect width="64" height="64" rx="16" fill={fondo}></rect>
     <g transform="translate(32 32) scale(.8) translate(-32 -32)" fill="none" stroke-width="8" stroke-linecap="round">
-      <path d="M20 44V20M44 44V20" stroke="#FFFFFF"></path>
-      <path d="M20 20l24 24" stroke={`url(#${id})`}></path>
+      <path class={trazo(1)} pathLength="1" d="M20 44V20" stroke="#FFFFFF"></path>
+      <path class={trazo(2)} pathLength="1" d="M20 20l24 24" stroke={`url(#${id})`}></path>
+      <path class={trazo(3)} pathLength="1" d="M44 44V20" stroke="#FFFFFF"></path>
     </g>
   </svg>
   <span class="font-display leading-none">
