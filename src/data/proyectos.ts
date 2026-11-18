@@ -14,7 +14,7 @@ export type Proyecto = {
 
 export const proyectos: Proyecto[] = [
   {
-    nombre: 'Sistema municipal',
+    nombre: 'Govly',
     cliente: 'Municipalidad de Pilar, Ñeembucú',
     anio: '2026',
     estado: 'En implementación',
@@ -31,7 +31,7 @@ export const proyectos: Proyecto[] = [
     tecnologias: ['React', 'NestJS', 'PostgreSQL', 'Redis'],
     imagen: {
       src: '/proyectos/sistema-municipal.jpg',
-      alt: 'Pantalla de inicio del portal del ciudadano del sistema municipal de Pilar',
+      alt: 'Pantalla de inicio del portal del ciudadano de Govly en la Municipalidad de Pilar',
     },
     enlace: { texto: 'Probar la demo', url: 'https://pilar-demo.pages.dev' },
   },

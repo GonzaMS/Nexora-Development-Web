@@ -11,7 +11,8 @@ export const empresa = {
   whatsappVisible: '+595 981 000 000',
 };
 
-export const equipo: { nombre: string; rol?: string }[] = [
+// `foto`: archivo cuadrado en `public/equipo/` (ej. '/equipo/cristhian.jpg'); sin foto se muestran las iniciales.
+export const equipo: { nombre: string; rol?: string; foto?: string }[] = [
   { nombre: 'Cristhian Marecos', rol: 'Ingeniero, fundador' },
   { nombre: 'Roberto Amarilla', rol: 'Analista de sistemas, cofundador' },
 ];

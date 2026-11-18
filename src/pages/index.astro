@@ -11,18 +11,22 @@ const whatsapp =
 const servicios = [
   {
     titulo: 'Sistemas web a medida',
+    icono: '<rect x="2" y="3" width="20" height="14" rx="2"/><path d="M8 21h8M12 17v4"/>',
     texto: 'Portales, paneles de gestión y sistemas internos pensados para cómo trabaja tu organización, no al revés. Funcionan en la computadora y en el celular.',
   },
   {
     titulo: 'Pagos e integraciones',
+    icono: '<rect x="2" y="5" width="20" height="14" rx="2"/><path d="M2 10h20M6 15h4"/>',
     texto: 'Conectamos tu sistema con pasarelas de pago, WhatsApp, correo y los servicios que ya usás, para que los datos no se carguen dos veces.',
   },
   {
     titulo: 'Asistentes con inteligencia artificial',
+    icono: '<path d="M12 3l1.8 4.7L18.5 9.5l-4.7 1.8L12 16l-1.8-4.7L5.5 9.5l4.7-1.8z"/><path d="M19 15l.8 2.2L22 18l-2.2.8L19 21l-.8-2.2L16 18l2.2-.8z"/>',
     texto: 'Asistentes que responden preguntas con la información de tu organización y pasan la charla a una persona cuando hace falta.',
   },
   {
     titulo: 'Mantenimiento y soporte',
+    icono: '<path d="M20 13c0 5-3.5 7.5-7.7 9a1 1 0 0 1-.6 0C7.5 20.5 4 18 4 13V6a1 1 0 0 1 1-1c2 0 4.5-1.2 6.2-2.7a1.2 1.2 0 0 1 1.6 0C14.5 3.8 17 5 19 5a1 1 0 0 1 1 1z"/><path d="m9 12 2 2 4-4"/>',
     texto: 'Después de entregar seguimos: copias de seguridad, vigilancia de errores, mejoras y ayuda a quienes usan el sistema todos los días.',
   },
 ];
@@ -67,12 +71,12 @@ const pasos = [
   </header>
 
   <main id="contenido">
-    <!-- Inicio: el título junto a la N de la marca, que se dibuja al cargar. -->
+    <!-- Inicio: el título junto a capturas reales de Govly (panel en la computadora y portal en el celular). -->
     <section class="mx-auto max-w-6xl px-4 pt-16 pb-20 sm:px-6 sm:pt-24 sm:pb-28">
-      <div class="grid items-center gap-12 lg:grid-cols-[1fr_auto]">
+      <div class="grid items-center gap-14 lg:grid-cols-[1fr_1.15fr] lg:gap-10">
         <div>
           <p class="font-display text-sm font-bold tracking-[0.2em] text-azul uppercase">{empresa.bajada}</p>
-          <h1 class="mt-5 font-display text-[2.4rem] leading-[1.02] font-bold tracking-[-0.03em] text-balance sm:text-6xl lg:text-[5.25rem]">
+          <h1 class="mt-5 font-display text-[2.4rem] leading-[1.02] font-bold tracking-[-0.03em] text-balance sm:text-6xl">
             Software moderno que crece con tu organización<span class="ml-1 inline-block size-[0.17em] rounded-full bg-azul align-baseline"></span>
           </h1>
           <p class="mt-7 max-w-2xl text-lg leading-relaxed text-gris sm:text-xl">
@@ -83,20 +87,19 @@ const pasos = [
             <a href="#proyectos" class="font-semibold text-medianoche underline decoration-azul decoration-2 underline-offset-[6px] hover:decoration-medianoche">Ver lo que hicimos</a>
           </div>
         </div>
-        <svg class="hidden size-80 lg:block" viewBox="0 0 64 64" aria-hidden="true">
-          <defs>
-            <linearGradient id="nx-inicio" x1="20" y1="20" x2="44" y2="44" gradientUnits="userSpaceOnUse">
-              <stop offset="0" stop-color="#2F54EB"></stop>
-              <stop offset="1" stop-color="#6EA8FF"></stop>
-            </linearGradient>
-          </defs>
-          <rect width="64" height="64" rx="16" fill="#121A2B"></rect>
-          <g transform="translate(32 32) scale(.8) translate(-32 -32)" fill="none" stroke-width="8" stroke-linecap="round">
-            <path class="trazo" pathLength="1" d="M20 44V20" stroke="#FFFFFF"></path>
-            <path class="trazo trazo-2" pathLength="1" d="M20 20l24 24" stroke="url(#nx-inicio)"></path>
-            <path class="trazo trazo-3" pathLength="1" d="M44 44V20" stroke="#FFFFFF"></path>
-          </g>
-        </svg>
+        <a href="#proyectos" class="relative block pr-[14%] pb-[10%] sm:pr-[12%]" aria-label="Ver Govly, el sistema municipal que hicimos">
+          <figure class="overflow-hidden rounded-xl border border-medianoche/10 bg-medianoche shadow-[0_30px_80px_-25px_rgba(18,26,43,0.45)]">
+            <div class="flex gap-1.5 border-b border-white/10 px-3 py-2.5" aria-hidden="true">
+              <span class="size-2 rounded-full bg-white/20"></span>
+              <span class="size-2 rounded-full bg-white/20"></span>
+              <span class="size-2 rounded-full bg-white/20"></span>
+            </div>
+            <img src="/proyectos/govly-panel.jpg" alt="Panel de administración de Govly con lo recaudado en el mes, impuestos pendientes y pagos" width="1600" height="1000" fetchpriority="high" class="block h-auto w-full" />
+          </figure>
+          <figure class="absolute right-0 bottom-0 w-[30%] overflow-hidden rounded-[1.4rem] border-[5px] border-medianoche bg-medianoche shadow-[0_25px_60px_-15px_rgba(18,26,43,0.55)]">
+            <img src="/proyectos/govly-celular.jpg" alt="Portal del ciudadano de Govly en el celular" width="780" height="1688" class="block h-auto w-full" />
+          </figure>
+        </a>
       </div>
     </section>
 
@@ -166,7 +169,8 @@ const pasos = [
         <dl class="grid gap-x-12 gap-y-10 sm:grid-cols-2">
           {servicios.map((s) => (
             <div class="border-t-2 border-medianoche pt-5">
-              <dt class="font-display text-xl font-bold">{s.titulo}</dt>
+              <svg class="size-10 rounded-lg bg-azul/10 p-2 text-azul" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" set:html={s.icono}></svg>
+              <dt class="mt-4 font-display text-xl font-bold">{s.titulo}</dt>
               <dd class="mt-3 leading-relaxed text-gris">{s.texto}</dd>
             </div>
           ))}
@@ -199,7 +203,11 @@ const pasos = [
           const iniciales = persona.nombre.split(' ').map((n) => n[0]).join('').slice(0, 2);
           return (
             <li class="flex items-center gap-4">
-              <span class="grid size-14 shrink-0 place-items-center rounded-full bg-medianoche font-display text-lg font-bold text-celeste" aria-hidden="true">{iniciales}</span>
+              {persona.foto ? (
+                <img src={persona.foto} alt="" width="160" height="160" loading="lazy" class="size-20 shrink-0 rounded-full object-cover" />
+              ) : (
+                <span class="grid size-20 shrink-0 place-items-center rounded-full bg-medianoche font-display text-xl font-bold text-celeste" aria-hidden="true">{iniciales}</span>
+              )}
               <span>
                 <span class="block font-semibold">{persona.nombre}</span>
                 {persona.rol && <span class="block text-sm text-gris">{persona.rol}</span>}
