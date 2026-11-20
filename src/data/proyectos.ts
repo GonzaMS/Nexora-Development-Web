@@ -35,4 +35,21 @@ export const proyectos: Proyecto[] = [
     },
     enlace: { texto: 'Probar la demo', url: 'https://pilar-demo.pages.dev' },
   },
+  {
+    nombre: 'Sistema de ventas, caja y cuotas',
+    cliente: 'Local de ropa y accesorios',
+    anio: '2026',
+    estado: 'En desarrollo',
+    resumen:
+      'Un programa para la computadora del local que reemplaza el cuaderno: registra cada venta, controla la plata que entra y sale de la caja y lleva las ventas en cuotas de cada cliente. Funciona sin internet.',
+    queHace: [
+      'Ventas por código o nombre, con ticket impreso',
+      'Caja con apertura, gastos por categoría y cierre con arqueo',
+      'Ventas en cuotas mensuales, pagos parciales y saldo por cliente',
+      'Inventario con fotos, compras y devoluciones',
+      'Usuarios con permisos para dueño y cajero',
+      'Datos guardados en la computadora, con respaldo diario',
+    ],
+    tecnologias: ['Electron', 'React', 'TypeScript', 'SQLite'],
+  },
 ];

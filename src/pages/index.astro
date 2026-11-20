@@ -145,13 +145,25 @@ const pasos = [
         )}
 
         {otros.length > 0 && (
-          <ul class="mt-20 grid gap-10 border-t border-white/15 pt-12 md:grid-cols-2">
+          <ul class="mt-20 grid gap-16 border-t border-white/15 pt-12">
             {otros.map((p) => (
-              <li>
-                <p class="text-sm text-celeste">{p.cliente}, {p.anio}</p>
-                <h3 class="mt-1 font-display text-2xl font-bold">{p.nombre}</h3>
-                <p class="mt-3 leading-relaxed text-niebla/80">{p.resumen}</p>
-                {p.enlace && <a href={p.enlace.url} target="_blank" rel="noopener" class="mt-4 inline-block font-semibold text-celeste underline underline-offset-4">{p.enlace.texto}</a>}
+              <li class="grid gap-8 lg:grid-cols-[1.1fr_1fr] lg:gap-14">
+                <div>
+                  <p class="text-sm text-celeste">{p.cliente}</p>
+                  <h3 class="mt-1 font-display text-2xl font-bold sm:text-3xl">{p.nombre}</h3>
+                  <p class="mt-1 text-sm text-niebla/60">{p.estado}, {p.anio}</p>
+                  <p class="mt-5 max-w-[62ch] leading-relaxed text-niebla/80">{p.resumen}</p>
+                  <p class="mt-5 text-sm text-niebla/60">Hecho con {p.tecnologias.join(', ')}.</p>
+                  {p.enlace && <a href={p.enlace.url} target="_blank" rel="noopener" class="mt-4 inline-block font-semibold text-celeste underline underline-offset-4">{p.enlace.texto}</a>}
+                </div>
+                <ul class="grid content-start gap-3 sm:grid-cols-2 lg:grid-cols-1">
+                  {p.queHace.map((item) => (
+                    <li class="flex gap-3 leading-snug text-niebla/90">
+                      <span class="mt-[0.45em] size-1.5 shrink-0 rounded-full bg-celeste" aria-hidden="true"></span>
+                      {item}
+                    </li>
+                  ))}
+                </ul>
               </li>
             ))}
           </ul>
