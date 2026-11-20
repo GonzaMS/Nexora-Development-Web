@@ -47,6 +47,7 @@ export const proyectos: Proyecto[] = [
       'Caja con apertura, gastos por categoría y cierre con arqueo',
       'Ventas en cuotas mensuales, pagos parciales y saldo por cliente',
       'Inventario con fotos, compras y devoluciones',
+      'Informes de ventas, ganancias, caja y cuotas atrasadas',
       'Usuarios con permisos para dueño y cajero',
       'Datos guardados en la computadora, con respaldo diario',
     ],
