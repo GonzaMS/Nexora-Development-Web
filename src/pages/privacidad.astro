@@ -1,0 +1,170 @@
+---
+import Base from '../layouts/Base.astro';
+import Logo from '../components/Logo.astro';
+import { empresa } from '../data/empresa';
+
+// Política de privacidad de la web y de Govly (Meta la pide para publicar la app de WhatsApp).
+// Al cambiar el texto, actualizar la fecha.
+const actualizada = '20 de noviembre de 2026';
+---
+
+<Base
+  titulo={`Política de privacidad · ${empresa.nombre}`}
+  descripcion={`Cómo ${empresa.nombre} trata los datos personales en su página y en Govly, el sistema de gestión municipal.`}
+>
+  <header class="border-b border-linea/70 bg-niebla">
+    <div class="mx-auto flex max-w-3xl items-center justify-between gap-6 px-4 py-3 sm:px-6">
+      <a href="/" aria-label="Nexora Development, inicio"><Logo /></a>
+      <a href="/" class="text-sm font-semibold text-gris hover:text-medianoche">Volver al inicio</a>
+    </div>
+  </header>
+
+  <main id="contenido" class="mx-auto max-w-3xl px-4 py-14 sm:px-6 sm:py-20">
+    <h1 class="font-display text-4xl font-bold tracking-tight sm:text-5xl">Política de privacidad</h1>
+    <p class="mt-4 text-gris">Última actualización: {actualizada}.</p>
+
+    <div class="politica mt-10 space-y-10 leading-relaxed">
+      <section>
+        <h2>Quiénes somos</h2>
+        <p>
+          {empresa.nombre} es un equipo de desarrollo de software de {empresa.ciudad}. Hacemos esta página y <strong>Govly</strong>, un sistema
+          de gestión municipal que usan las municipalidades para atender a sus ciudadanos: trámites, pagos, expedientes, consultas y avisos
+          (por correo, notificaciones y WhatsApp).
+        </p>
+        <p>Para cualquier pregunta sobre esta política o sobre tus datos, escribinos a <a href={`mailto:${empresa.email}`}>{empresa.email}</a>.</p>
+      </section>
+
+      <section>
+        <h2>Quién es responsable de tus datos</h2>
+        <p>
+          En Govly, <strong>la municipalidad es la responsable</strong> de los datos de sus ciudadanos: decide qué se pide, para qué se usa y
+          cuánto tiempo se guarda. {empresa.nombre} es la <strong>encargada</strong>: opera el sistema por cuenta de la municipalidad y solo usa
+          los datos para prestarle ese servicio. No vendemos datos personales ni los usamos para publicidad.
+        </p>
+        <p>En esta página web, {empresa.nombre} es la responsable de lo que nos mandes al escribirnos.</p>
+      </section>
+
+      <section>
+        <h2>Qué datos tratamos</h2>
+        <ul>
+          <li><strong>Identificación:</strong> nombre, número de cédula y, si la municipalidad lo pide para crear la cuenta, una foto de la cédula.</li>
+          <li><strong>Contacto:</strong> número de celular y correo electrónico.</li>
+          <li><strong>Trámites y pagos:</strong> los trámites, expedientes, tributos y pagos que hacés con la municipalidad.</li>
+          <li><strong>Mensajes:</strong> las consultas que mandás desde el portal o por WhatsApp, y las respuestas de la municipalidad.</li>
+          <li><strong>Datos técnicos:</strong> dirección IP, navegador, fecha y hora de ingreso, y registro de quién consultó tus datos dentro del sistema.</li>
+        </ul>
+      </section>
+
+      <section>
+        <h2>Para qué los usamos</h2>
+        <ul>
+          <li>Que puedas hacer trámites, pagar y seguir tus expedientes con la municipalidad.</li>
+          <li>Avisarte novedades de tus trámites, vencimientos y comunicados de la municipalidad.</li>
+          <li>Responder tus consultas, incluidas las que mandás por WhatsApp.</li>
+          <li>Proteger el sistema: detectar accesos indebidos, prevenir fraudes y corregir errores.</li>
+          <li>Cumplir obligaciones legales de la municipalidad.</li>
+        </ul>
+      </section>
+
+      <section id="whatsapp">
+        <h2>WhatsApp</h2>
+        <p>
+          Govly usa la API oficial de WhatsApp Business de Meta. Si cargás tu celular en tu perfil, la municipalidad puede mandarte por WhatsApp
+          códigos de verificación y avisos de tus trámites. Si respondés a ese número, tu mensaje entra al sistema como una consulta y la contesta
+          una persona de la municipalidad.
+        </p>
+        <p>
+          Para esto, Govly recibe de Meta tu número, tu nombre de perfil de WhatsApp y el contenido de tus mensajes. Meta trata esos datos según
+          sus propias políticas (<a href="https://www.whatsapp.com/legal/privacy-policy" rel="noopener">política de privacidad de WhatsApp</a>).
+          Podés dejar de recibir mensajes quitando el celular de tu perfil o pidiéndoselo a la municipalidad.
+        </p>
+      </section>
+
+      <section>
+        <h2>Con quién se comparten</h2>
+        <p>Solo con proveedores que necesitamos para que el sistema funcione, y solo lo necesario:</p>
+        <ul>
+          <li><strong>Servidores y protección:</strong> servidores en Brasil y Cloudflare (red, protección contra ataques y guardado de archivos).</li>
+          <li><strong>Mensajería:</strong> Meta (WhatsApp) y el proveedor de correo electrónico.</li>
+          <li><strong>Asistente con inteligencia artificial:</strong> si la municipalidad lo activa, las preguntas que le hagas al asistente se procesan con Anthropic.</li>
+          <li><strong>Pagos:</strong> la pasarela de pagos que use la municipalidad, para cobrar los pagos en línea.</li>
+          <li><strong>Monitoreo de errores:</strong> un servicio que nos avisa cuando algo falla, sin datos personales más allá de los técnicos.</li>
+        </ul>
+        <p>Algunos de estos proveedores procesan datos fuera de Paraguay. También compartimos datos cuando lo ordena una autoridad competente.</p>
+      </section>
+
+      <section>
+        <h2>Cuánto tiempo se guardan</h2>
+        <p>
+          Mientras tengas una cuenta en el sistema de tu municipalidad y durante el plazo que ella defina según sus obligaciones legales. Pasado ese
+          plazo, los datos se borran o se anonimizan.
+        </p>
+      </section>
+
+      <section>
+        <h2>Cómo los protegemos</h2>
+        <p>
+          Conexiones cifradas, contraseñas guardadas con algoritmos seguros, verificación en dos pasos para el personal, separación de los datos de
+          cada municipalidad, registro de quién consulta datos personales y copias de seguridad cifradas.
+        </p>
+      </section>
+
+      <section id="eliminar">
+        <h2>Tus derechos y cómo pedir que borren tus datos</h2>
+        <p>
+          Según la Ley 7593/2025 de protección de datos personales, podés pedir ver tus datos, corregirlos, que se borren o que se dejen de usar
+          para algo. Podés hacerlo:
+        </p>
+        <ul>
+          <li>Ante tu municipalidad, que es la responsable de tus datos en Govly.</li>
+          <li>Escribiéndonos a <a href={`mailto:${empresa.email}`}>{empresa.email}</a> con tu nombre, tu número de cédula, la municipalidad y lo que pedís. Se lo pasamos a la municipalidad y te respondemos.</li>
+        </ul>
+        <p>
+          Para borrar los datos que llegaron por WhatsApp, mandá el mismo pedido indicando tu número de celular. Algunos datos pueden tener que
+          guardarse por obligaciones legales (por ejemplo, los pagos); en ese caso te lo explicamos.
+        </p>
+      </section>
+
+      <section>
+        <h2>Cambios</h2>
+        <p>Si cambiamos esta política, publicamos la nueva versión en esta página con su fecha.</p>
+      </section>
+    </div>
+  </main>
+
+  <footer class="oscuro bg-medianoche text-niebla">
+    <div class="mx-auto flex max-w-3xl flex-wrap items-center justify-between gap-4 px-4 py-8 text-sm text-niebla/60 sm:px-6">
+      <Logo oscuro />
+      <p>{empresa.bajada}. {empresa.ciudad}, {new Date().getFullYear()}.</p>
+    </div>
+  </footer>
+</Base>
+
+<style>
+  .politica h2 {
+    font-family: var(--font-display);
+    font-size: 1.5rem;
+    font-weight: 700;
+    letter-spacing: -0.01em;
+  }
+  .politica p,
+  .politica ul {
+    margin-top: 0.85rem;
+    color: var(--color-gris);
+  }
+  .politica strong {
+    color: var(--color-medianoche);
+  }
+  .politica ul {
+    list-style: disc;
+    padding-left: 1.25rem;
+  }
+  .politica li + li {
+    margin-top: 0.4rem;
+  }
+  .politica a {
+    color: var(--color-azul);
+    text-decoration: underline;
+    text-underline-offset: 3px;
+  }
+</style>
